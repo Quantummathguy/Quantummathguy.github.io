@@ -1,1 +1,542 @@
+/* =========================================================
+   ALBERTO ACEVEDO — PERSONAL / ACADEMIC WEBSITE
+   Main stylesheet
+   ========================================================= */
 
+/* ---------- General reset ---------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    color: #263238;
+    background: #ffffff;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* ---------- Global layout ---------- */
+
+.container {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}
+
+section {
+    padding: 90px 0;
+}
+
+.section-title {
+    margin-bottom: 15px;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #17202a;
+}
+
+.section-subtitle {
+    max-width: 750px;
+    margin-bottom: 45px;
+    color: #607d8b;
+    font-size: 1.05rem;
+}
+
+
+/* ---------- Navigation ---------- */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid #e6e9ec;
+    backdrop-filter: blur(10px);
+}
+
+.navbar {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #17202a;
+    white-space: nowrap;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: #455a64;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #1565c0;
+}
+
+
+/* ---------- Hero ---------- */
+
+.hero {
+    min-height: 78vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(
+        135deg,
+        #f7f9fb 0%,
+        #ffffff 55%,
+        #eef5fb 100%
+    );
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.hero-kicker {
+    margin-bottom: 15px;
+    color: #1565c0;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    margin-bottom: 20px;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    color: #17202a;
+}
+
+.hero h2 {
+    margin-bottom: 25px;
+    font-size: clamp(1.25rem, 2.5vw, 1.7rem);
+    font-weight: 400;
+    color: #546e7a;
+}
+
+.hero-text {
+    max-width: 680px;
+    margin-bottom: 30px;
+    font-size: 1.08rem;
+    color: #455a64;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+
+/* ---------- Buttons ---------- */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 10px 22px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: #1565c0;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background: #0d47a1;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    border-color: #cfd8dc;
+    background: #ffffff;
+    color: #37474f;
+}
+
+.btn-secondary:hover {
+    border-color: #1565c0;
+    color: #1565c0;
+}
+
+
+/* ---------- Profile image ---------- */
+
+.profile-image-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-image {
+    width: min(360px, 80vw);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 8px solid #ffffff;
+    box-shadow: 0 15px 45px rgba(38, 50, 56, 0.15);
+}
+
+
+/* ---------- About / research ---------- */
+
+.about-grid,
+.research-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: start;
+}
+
+.text-block p {
+    margin-bottom: 18px;
+}
+
+.interest-list {
+    display: grid;
+    gap: 12px;
+}
+
+.interest-list li {
+    padding: 15px 18px;
+    border-left: 4px solid #1565c0;
+    background: #f6f8fa;
+    color: #455a64;
+}
+
+
+/* ---------- Cards ---------- */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    padding: 28px;
+    background: #ffffff;
+    border: 1px solid #e4e8eb;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(38, 50, 56, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(38, 50, 56, 0.09);
+}
+
+.card h3 {
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+    color: #17202a;
+}
+
+.card p {
+    color: #607d8b;
+}
+
+
+/* ---------- Publications ---------- */
+
+.publication-list {
+    display: grid;
+    gap: 20px;
+}
+
+.publication {
+    padding: 25px 28px;
+    border-left: 4px solid #1565c0;
+    background: #f7f9fb;
+}
+
+.publication-title {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #17202a;
+}
+
+.publication-authors {
+    margin-bottom: 5px;
+    color: #546e7a;
+}
+
+.publication-journal {
+    color: #78909c;
+    font-style: italic;
+}
+
+.publication-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.publication-links a {
+    color: #1565c0;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.publication-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* ---------- CV ---------- */
+
+.cv-box {
+    padding: 45px;
+    text-align: center;
+    background: #f5f8fb;
+    border-radius: 10px;
+}
+
+.cv-box p {
+    max-width: 650px;
+    margin: 0 auto 25px;
+    color: #607d8b;
+}
+
+
+/* ---------- Presentations ---------- */
+
+.presentation-list {
+    display: grid;
+    gap: 18px;
+}
+
+.presentation {
+    padding: 22px 25px;
+    border: 1px solid #e4e8eb;
+    border-radius: 7px;
+    background: #ffffff;
+}
+
+.presentation h3 {
+    margin-bottom: 6px;
+    color: #17202a;
+}
+
+.presentation p {
+    color: #607d8b;
+}
+
+
+/* ---------- Video embeds ---------- */
+
+.video-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #eceff1;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+/* ---------- Skating ---------- */
+
+.skating-section {
+    background: #f7f9fb;
+}
+
+.skating-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.skating-gallery img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.25s ease;
+}
+
+.skating-gallery img:hover {
+    transform: scale(1.02);
+}
+
+
+/* ---------- Contact ---------- */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.contact-item {
+    margin-bottom: 20px;
+}
+
+.contact-item strong {
+    display: block;
+    margin-bottom: 4px;
+    color: #17202a;
+}
+
+.contact-item a {
+    color: #1565c0;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+    padding: 35px 0;
+    background: #17202a;
+    color: #b0bec5;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.site-footer a {
+    color: #ffffff;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* ---------- Utility ---------- */
+
+.text-center {
+    text-align: center;
+}
+
+.mt-small {
+    margin-top: 20px;
+}
+
+.mt-medium {
+    margin-top: 40px;
+}
+
+
+/* ---------- Responsive design ---------- */
+
+@media (max-width: 900px) {
+
+    .hero-grid,
+    .about-grid,
+    .research-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .hero {
+        padding: 80px 0;
+    }
+
+    .profile-image-wrapper {
+        order: -1;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .skating-gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    section {
+        padding: 65px 0;
+    }
+
+    .navbar {
+        min-height: 65px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .card-grid,
+    .skating-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .cv-box {
+        padding: 30px 20px;
+    }
+
+    .publication {
+        padding: 20px;
+    }
+}
